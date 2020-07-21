@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: kibana
-        image: docker.elastic.co/kibana/kibana:7.6.2
+        image: hub.kce.ksyun.com/kpl_k8s/kibana:7.6.2
         resources:
           limits:
             cpu: 1000m
@@ -24,7 +24,7 @@ spec:
             cpu: 100m
         env:
           - name: ELASTICSEARCH_URL
-            value: http://192.168.1.32:31920
+            value: http://elasticsearch.logging.svc.cluster.local:9200
           - name: I18N_LOCALE11
             value: zh-CN
         ports:

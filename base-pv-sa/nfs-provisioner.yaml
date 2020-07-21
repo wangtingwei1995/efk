@@ -20,13 +20,13 @@ spec:
               mountPath: /persistentvolumes
           env:
             - name: PROVISIONER_NAME
-              value: logging/nfs
+              value: logging/nfs   
             - name: NFS_SERVER
-              value: 192.168.1.53
+              value: 192.168.1.53   ##set
             - name: NFS_PATH
-              value: /opt/registry
+              value: /opt/registry  #set 
       volumes:
         - name: nfs-client-root
           nfs:
-            server: 192.168.1.53
-            path: /opt/registry
+            server: 192.168.1.53   #set 
+            path: /opt/registry    #set
