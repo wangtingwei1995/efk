@@ -72,8 +72,8 @@ data:
       @type elasticsearch
       @log_level info
       include_tag_key true
-      host elasticsearch
-      port 9200
+      host 192.168.1.32  #数据输送到es，这里为es的service
+      port 31920
       logstash_format true
       request_timeout    30s
       <buffer>

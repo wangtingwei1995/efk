@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: elasticsearch
+  name: elasticsearch-svc-nodeport
   namespace: logging
   labels:
     app: elasticsearch

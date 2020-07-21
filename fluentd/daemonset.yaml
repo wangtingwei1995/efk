@@ -34,15 +34,15 @@ spec:
           value: --no-supervisor -q
         resources:
           limits:
-            memory: 500Mi
+            memory: 1Gi
           requests:
             cpu: 100m
             memory: 200Mi
         volumeMounts:
         - name: varlog
-          mountPath: /var/log
+          mountPath: /var/log/
         - name: varlibdockercontainers
-          mountPath: /data/docker/containers
+          mountPath: /home/docker/containers
           readOnly: true
         - name: config-volume
           mountPath: /etc/fluent/config.d
@@ -56,10 +56,10 @@ spec:
       volumes:
       - name: varlog
         hostPath:
-          path: /var/log
+          path: /var/log/   #收集宿主机/var/log下的所有日志
       - name: varlibdockercontainers
         hostPath:
-          path: /data/docker/containers
+          path: /home/docker/containers  #收集docker 容器下宿主机日志。此处定义docker info |grep Root出现的docker存储目录
       - name: config-volume
         configMap:
           name: fluentd-config
